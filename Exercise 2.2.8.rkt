@@ -5,7 +5,6 @@
 ;; Exercise 2.2.8
 
 ;; Try to explain how Scheme expressions are evaluated. Does your explanation cover the last example in
-;; Exercise 2.2.3?
 
 #lang scheme
 
