@@ -23,3 +23,25 @@
    (let ([new-x 'c]) (cons new-x y))
    (let ([new-y 'd]) (cons x new-y))
  ))
+
+;; b
+
+(let ([x '((a b) c)])
+  (cons (let ([x (cdr x)])
+          (car x))
+        (let ([x (car x)])
+          (cons (let ([x (cdr x)])
+                  (car x))
+                (cons (let ([x (car x)])
+                        x)
+                      (cdr x))))))
+
+(let ([ab-c '((a b) c)])
+  (cons (let ([cdr-x (cdr ab-c)])
+          (car cdr-x))
+        (let ([new-x (car ab-c)])
+          (cons (let ([third-x (cdr new-x)])
+                  (car third-x))
+                (cons (let ([x (car new-x)])
+                        x)
+                      (cdr new-x))))))
